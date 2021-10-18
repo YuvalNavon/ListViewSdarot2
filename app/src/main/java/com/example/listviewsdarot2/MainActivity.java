@@ -11,13 +11,13 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
-    char series_check;
-    int a1;
-    int diff;
+    int series_check;
+    double a1;
+    double diff;
     EditText first;
     EditText diff_t;
     Switch sw;
-    Intent gi;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         first = (EditText) findViewById(R.id.a1);
         diff_t = (EditText) findViewById(R.id.m);
         sw = (Switch) findViewById(R.id.switch1);
+
     }
 
     public void calculate (View view)
@@ -36,15 +37,23 @@ public class MainActivity extends AppCompatActivity {
         }
         if (sw.isChecked() == false)
         {
-            series_check = 'a';
+            series_check =  0;
         }
         else
         {
-            series_check = 'g';
+            series_check = 1;
         }
-        Intent si = new Intent(this, results.class);
-        si.putExtra("first", a1);
-        si.putExtra("m", diff);
+        if (first.getText().toString().isEmpty() == false && diff_t.getText().toString().isEmpty() == false)
+        {
+            Intent si = new Intent(this, results.class);
+            a1 = Double.parseDouble(first.getText().toString());
+            diff = Double.parseDouble(diff_t.getText().toString());
+            si.putExtra("first", a1);
+            si.putExtra("m", diff);
+            si.putExtra("series_type", series_check);
+            startActivity(si);
+        }
+
 
     }
 

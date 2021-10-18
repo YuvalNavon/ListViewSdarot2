@@ -28,17 +28,17 @@
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="0.5" />
 
             <TextView
                 android:id="@+id/arithmetic"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
                 android:gravity="center"
                 android:text="ARITHMETIC\nSERIES"
                 android:textColor="#2196F3"
-                android:textSize="30sp" />
+                android:textSize="16sp" />
 
             <Space
                 android:layout_width="0dp"
@@ -47,18 +47,18 @@
 
             <TextView
                 android:id="@+id/geometric"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
                 android:gravity="center"
                 android:text="GEOMETRIC\nSERIES"
                 android:textColor="#F44336"
-                android:textSize="30sp" />
+                android:textSize="16sp" />
 
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="0.5" />
 
         </LinearLayout>
 
@@ -78,12 +78,14 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="left" />
+                android:gravity="left"
+                android:textOff='""'
+                android:textOn='""' />
 
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1.75" />
+                android:layout_weight="1.25" />
         </LinearLayout>
 
         <LinearLayout
@@ -100,7 +102,7 @@
                 android:ems="10"
                 android:gravity="center"
                 android:hint="First term:"
-                android:inputType="number"
+                android:inputType="numberDecimal|numberSigned"
                 android:textSize="28sp" />
 
             <Space
@@ -116,7 +118,7 @@
                 android:ems="10"
                 android:gravity="center"
                 android:hint="Difference/\nMultiplier:"
-                android:inputType="number"
+                android:inputType="numberDecimal|numberSigned"
                 android:textSize="28sp" />
         </LinearLayout>
 
