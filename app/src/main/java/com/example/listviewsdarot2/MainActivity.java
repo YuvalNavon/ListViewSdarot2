@@ -32,9 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void calculate (View view)
     {
-        if (first.getText().toString().isEmpty() || diff_t.getText().toString().isEmpty()) {
-            Toast.makeText(getApplicationContext(), "Please input all pararmeters!", Toast.LENGTH_SHORT).show();
-        }
+
         if (sw.isChecked() == false)
         {
             series_check =  0;
@@ -43,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         {
             series_check = 1;
         }
-        if (first.getText().toString().isEmpty() == false && diff_t.getText().toString().isEmpty() == false)
+        if (first.getText().toString().isEmpty() == false && diff_t.getText().toString().isEmpty() == false && !first.getText().toString().equals(".") && !diff_t.getText().toString().equals(".") && !first.getText().toString().equals("-.") && !diff_t.getText().toString().equals("-."))
         {
             Intent si = new Intent(this, results.class);
             a1 = Double.parseDouble(first.getText().toString());
@@ -53,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
             si.putExtra("series_type", series_check);
             startActivity(si);
         }
+        else
+            {
+                Toast.makeText(getApplicationContext(), "Please input all pararmeters correctly!", Toast.LENGTH_SHORT).show();
+
+            }
 
 
     }
