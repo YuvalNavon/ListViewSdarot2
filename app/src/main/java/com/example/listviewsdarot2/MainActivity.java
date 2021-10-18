@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         {
             series_check = 1;
         }
-        if (first.getText().toString().isEmpty() == false && diff_t.getText().toString().isEmpty() == false && !first.getText().toString().equals(".") && !diff_t.getText().toString().equals(".") && !first.getText().toString().equals("-.") && !diff_t.getText().toString().equals("-."))
+        if (first.getText().toString().isEmpty() == false && diff_t.getText().toString().isEmpty() == false && !first.getText().toString().equals(".") && !diff_t.getText().toString().equals(".") && !first.getText().toString().equals("-.") && !diff_t.getText().toString().equals("-.") && !first.getText().toString().equals("+") && !diff_t.getText().toString().equals("+") && !first.getText().toString().equals("-") && !diff_t.getText().toString().equals("-") && !first.getText().toString().equals("+.") && !diff_t.getText().toString().equals("+."))
         {
             Intent si = new Intent(this, results.class);
             a1 = Double.parseDouble(first.getText().toString());
